@@ -1,0 +1,31 @@
+<!--
+  ~ Copyright (c) 2016 VMware, Inc. All Rights Reserved.
+  ~ This software is released under MIT license.
+  ~ The full license information can be found in LICENSE in the root directory of this project.
+  -->
+<form>
+    <section class="form-block">
+        <ace-editor mode="markdown"
+            [(text)]="text"
+            [theme]="'eclipse'"
+            style="min-height: 400px; width:100%; overflow: auto;"></ace-editor>
+        <div class="form-group">
+            <label for="note-title">Note Title</label>
+            <input type="text" id="note-title" placeholder="title" [(ngModel)]="title" name="title">
+        </div>
+        <button type="submit" class="btn" (click)="createNote()"><clr-icon shape="plus"></clr-icon>Create</button>
+    </section>
+</form>
+
+<div class="row">
+    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12" *ngFor="let note of notes">
+        <a class="card clickable" (click)="getNote(note)">
+            <div class="card-header">
+                {{note.date.toLocaleDateString()}} | {{note.title}}
+            </div>
+            <div class="card-block">
+                <div class="card-text" [innerHTML]="note.html"></div>
+            </div>
+        </a>
+    </div>
+</div>
