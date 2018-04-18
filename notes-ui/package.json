@@ -30,6 +30,7 @@
     "ng2-ace-editor": "^0.3.4",
     "npm": "^5.8.0",
     "rxjs": "^5.4.3",
+    "ssri": "^5.2.4",
     "ts-helpers": "^1.1.1",
     "web-animations-js": "^2.3.1",
     "zone.js": "^0.8.16"
