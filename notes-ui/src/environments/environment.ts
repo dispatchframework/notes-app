@@ -5,6 +5,6 @@
 
 export const environment = {
   production: false,
-  api_url: "35.230.64.249",
-  api_path: "/demo/allnotes"
+  api_url: "https://api-dispatch.example.com",
+  api_path: "/dispatch/notes"
 };

@@ -1,0 +1,14 @@
+kind: ServiceInstance
+name: postgres
+serviceclass: azure-postgresql-9-6
+serviceplan: basic
+parameters:
+  resourceGroup: dispatch
+  location: westus
+  firewallRules:
+    - name: AllowAll
+      startIPAddress: "0.0.0.0"
+      endIPAddress: "255.255.255.255"
+tags:
+  - key: role
+    value : vmworld

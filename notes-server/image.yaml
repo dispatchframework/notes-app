@@ -1,0 +1,8 @@
+kind: Image
+name: python3-notes-server
+baseImageName: python3-base
+runtimeDependencies:
+  manifest: '@requirements.txt'
+tags:
+  - key: role
+    value: vmworld

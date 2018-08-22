@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notes-ui
+  labels:
+    app: notes-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notes-ui
+  template:
+    metadata:
+      labels:
+        app: notes-ui
+    spec:
+      containers:
+      - name: notes-ui
+        image: dispatchframework/notes-ui:0.0.1
+        ports:
+        - containerPort: 80
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: notes-ui
+spec:
+  selector:
+    app: notes-ui
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80

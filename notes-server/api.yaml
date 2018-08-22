@@ -1,0 +1,25 @@
+kind: API
+name: get-notes
+function: get-notes
+authentication: public
+cors: true
+enabled: true
+methods:
+- GET
+protocols:
+- https
+uris:
+- /notes
+---
+kind: API
+name: post-note
+function: add-note
+authentication: public
+cors: true
+enabled: true
+methods:
+- POST
+protocols:
+- https
+uris:
+- /notes

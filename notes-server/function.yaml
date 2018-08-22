@@ -1,0 +1,21 @@
+kind: Function
+name: add-note
+sourcePath: 'add_note.py'
+image: python3-notes-server
+schema: {}
+services:
+  - postgres
+tags:
+  - key: role
+    value: vmworld
+---
+kind: Function
+name: get-notes
+sourcePath: 'get_notes.py'
+image: python3-notes-server
+schema: {}
+services:
+  - postgres
+tags:
+  - key: role
+    value: vmworld

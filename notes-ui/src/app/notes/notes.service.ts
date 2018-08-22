@@ -26,14 +26,14 @@ export class NotesService {
   }
 
   getNotes(): Observable<Note[]> {
-    return this.http.get('http://' + environment.api_url + environment.api_path, this._requestOptions())
+    return this.http.get(environment.api_url + environment.api_path, this._requestOptions())
       .map(this.extractNotes)
       .catch(this.handleError);
   }
 
   refreshNotes(period: number): Observable<Note[]> {
     return Observable.interval(period)
-      .switchMap(() => this.http.get('http://' + environment.api_url + environment.api_path, this._requestOptions()))
+      .switchMap(() => this.http.get(environment.api_url + environment.api_path, this._requestOptions()))
       .map(this.extractNotes)
       .catch(this.handleError);
   }
@@ -58,7 +58,7 @@ export class NotesService {
       text: text
     }
     return this.http.post(
-      'http://' + environment.api_url + environment.api_path,
+      environment.api_url + environment.api_path,
       body,
       this._requestOptions())
       .map(this.extractNote)
