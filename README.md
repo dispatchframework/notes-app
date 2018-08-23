@@ -29,3 +29,13 @@ Do the following steps from within the `notes-server` directory:
 
 2. Create the image which includes the required python depenencies:
     `dispatch create -f image.yaml`
+
+3. Create the functions:
+    `dispatch create -f function.yaml`
+
+4. Create the api:
+    `dispatch create -f api.yaml`
+
+## Tearing Down
+
+Repeat the steps for creating the server, with `dispatch delete -f <file>`
